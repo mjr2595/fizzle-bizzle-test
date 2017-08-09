@@ -37,20 +37,28 @@
             <div class="col-sm-12">
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
-                        @Html.TextBoxFor(m => m.Start, new { @class = "form-control", placeholder = "Start" })
+                        @Html.TextBoxFor(m => m.Start, new { @class="form-control",
+                                                             @placehzolder="Start",
+                                                             @Autocomplete= "off" })
                     </div>
                     <div class="col-sm-12 col-md-6">
-                        @Html.TextBoxFor(m => m.End, new { @class = "form-control", placeholder = "End" })
+                        @Html.TextBoxFor(m => m.End, new { @class="form-control", 
+                                                           @placeholder="End",
+                                                           @Autocomplete= "off" })
                     </div>
                 </div>
             </div>
             <div class="col-sm-12">
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
-                        @Html.TextBoxFor(m => m.Fizz, new { @class = "form-control", placeholder = "Fizz" })
+                        @Html.TextBoxFor(m => m.Fizz, new { @class="form-control",
+                                                            @placeholder="Fizz",
+                                                            @Autocomplete= "off" })
                     </div>
                     <div class="col-sm-12 col-md-6">
-                       @Html.TextBoxFor(m => m.Buzz, new { @class = "form-control", placeholder = "Buzz" })
+                       @Html.TextBoxFor(m => m.Buzz, new { @class="form-control",
+                                                           @placeholder="Buzz",
+                                                           @Autocomplete= "off" })
                     </div>
                 </div>
             </div>
@@ -67,7 +75,9 @@
                         <span class="slider-label">Enable Bazz?</span>
                     </div>
                     <div class="col-sm-12 col-md-6">
-                        @Html.TextBoxFor(m => m.Bazz, new { @class = "form-control", placeholder = "Bazz" })
+                        @Html.TextBoxFor(m => m.Bazz, new { @class="form-control",
+                                                            @placeholder="Bazz",
+                                                            @Autocomplete= "off" })
                     </div>
                 </div>
             </div>
