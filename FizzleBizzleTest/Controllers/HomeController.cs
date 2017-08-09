@@ -9,18 +9,32 @@ using FizzleBizzleTest.Models;
 namespace FizzleBizzleTest.Controllers
 {
     public class HomeController : Controller
-    {
-        public ActionResult Index()
+    {    
+        public ActionResult Index(FizzleBizzle fb)
         {
-            var mvcName = typeof(Controller).Assembly.GetName();
-            var isMono = Type.GetType("Mono.Runtime") != null;
-
-            ViewData["Version"] = mvcName.Version.Major + "." + mvcName.Version.Minor;
-            ViewData["Runtime"] = isMono ? "Mono" : ".NET";
-
-            return View();
+            if (fb.Start != 0)
+            {
+                if (fb.Bazz == 0)
+	            {
+                    string[] outputArray = fb.FizzBuzz(fb.Start, fb.End);
+	                ViewBag.Output = GetStringOutput(outputArray);
+	            }
+	            else
+	            {
+	                string[] outputArray = fb.FizzBuzzBazz(fb.Start, fb.End, fb.GreaterThan);
+	                ViewBag.Output = GetStringOutput(outputArray);
+	            }
+            }
+            return View(fb);
         }
         
-        
+        private string GetStringOutput(string[] output)
+        {
+            string str = null;
+            str += "[\"";
+            str += string.Join("\", \"", output);
+            str += "\"]";
+            return str;
+        }
     }
 }
